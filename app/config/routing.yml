@@ -1,3 +1,7 @@
+meta_ontology:
+    resource: "@MetaOntologyBundle/Resources/config/routing.yml"
+    prefix:   /
+
 test:
     resource: "@TestBundle/Resources/config/routing.yml"
     prefix:   /
