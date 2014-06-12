@@ -1,0 +1,7 @@
+parameters:
+#    meta_ontology.example.class: Meta\OntologyCreateBundle\Example
+
+services:
+#    meta_ontology.example:
+#        class: %meta_ontology.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
