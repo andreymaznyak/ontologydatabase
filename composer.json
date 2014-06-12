@@ -20,7 +20,11 @@
         "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
         "doctrine/doctrine-fixtures-bundle": "2.2.*",
-        "sonata-project/core-bundle": "~2.2@dev"
+        "sonata-project/core-bundle": "~2.2@dev",
+        "sonata-project/admin-bundle": "dev-master",
+        "sonata-project/doctrine-orm-admin-bundle": "dev-master",
+        "sonata-project/intl-bundle": "dev-master",
+        "sonata-project/jquery-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

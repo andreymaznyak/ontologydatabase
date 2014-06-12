@@ -243,4 +243,42 @@ class ModelChoiceListTest extends Propel1TestCase
         $this->assertEquals(array(), $choiceList->getValuesForChoices(array(new Item(2, 'Bar'))));
         $this->assertEquals(array(), $choiceList->getChoicesForValues(array(2)));
     }
+
+    /**
+     * @expectedException \Symfony\Component\OptionsResolver\Exception\MissingOptionsException
+     */
+    public function testEmptyClass()
+    {
+        $choiceList = new ModelChoiceList('');
+    }
+
+    /**
+     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     */
+    public function testInvalidClass()
+    {
+        $choiceList = new ModelChoiceList('Foo\Bar\DoesNotExistClass');
+    }
+
+    public function testCustomIdentifier()
+    {
+        $item1 = new Item(1, 'Foo', null, null, 'slug');
+        $item2 = new Item(2, 'Bar', null, null, 'slug2');
+
+        $choiceList = new ModelChoiceList(
+            self::ITEM_CLASS,
+            'value',
+            array(
+                $item1,
+                $item2,
+            ),
+            null,
+            null,
+            array(),
+            null,
+            'slug'
+        );
+
+        $this->assertSame(array('slug' => $item1, 'slug2' => $item2), $choiceList->getChoices());
+    }
 }

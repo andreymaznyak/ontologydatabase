@@ -18,7 +18,14 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Test\Bundle\TestBundle(),
             new Meta\OntologyCreateBundle\MetaOntologyBundle(),
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Sonata\CoreBundle\SonataCoreBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\IntlBundle\SonataIntlBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

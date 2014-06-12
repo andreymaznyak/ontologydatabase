@@ -11,17 +11,20 @@
 
 namespace Symfony\Component\Validator;
 
+use Symfony\Component\Translation\TranslatorInterface;
 use Symfony\Component\Validator\Constraints\Valid;
 use Symfony\Component\Validator\Exception\ValidatorException;
-use Symfony\Component\Translation\TranslatorInterface;
 
 /**
  * Default implementation of {@link ValidatorInterface}.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Bernhard Schussek <bschussek@gmail.com>
+ *
+ * @deprecated Deprecated since version 2.5, to be removed in Symfony 3.0.
+ *             Use {@link Validator\RecursiveValidator} instead.
  */
-class Validator implements ValidatorInterface
+class Validator implements ValidatorInterface, Mapping\Factory\MetadataFactoryInterface
 {
     /**
      * @var MetadataFactoryInterface
@@ -72,7 +75,7 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getMetadataFor($value)
     {
@@ -80,7 +83,15 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
+     */
+    public function hasMetadataFor($value)
+    {
+        return $this->metadataFactory->hasMetadataFor($value);
+    }
+
+    /**
+     * {@inheritdoc}
      */
     public function validate($value, $groups = null, $traverse = false, $deep = false)
     {
@@ -94,7 +105,7 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      *
      * @throws ValidatorException If the metadata for the value does not support properties.
      */
@@ -108,7 +119,7 @@ class Validator implements ValidatorInterface
                 ? '"'.$containingValue.'"'
                 : 'the value of type '.gettype($containingValue);
 
-            throw new ValidatorException(sprintf('The metadata for '.$valueAsString.' does not support properties.'));
+            throw new ValidatorException(sprintf('The metadata for %s does not support properties.', $valueAsString));
         }
 
         foreach ($this->resolveGroups($groups) as $group) {
@@ -125,7 +136,7 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      *
      * @throws ValidatorException If the metadata for the value does not support properties.
      */
@@ -156,7 +167,7 @@ class Validator implements ValidatorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function validateValue($value, $constraints, $groups = null)
     {

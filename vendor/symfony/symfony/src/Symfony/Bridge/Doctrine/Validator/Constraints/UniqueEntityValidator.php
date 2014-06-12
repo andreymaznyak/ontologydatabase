@@ -46,6 +46,10 @@ class UniqueEntityValidator extends ConstraintValidator
      */
     public function validate($entity, Constraint $constraint)
     {
+        if (!$constraint instanceof UniqueEntity) {
+            throw new UnexpectedTypeException($constraint, __NAMESPACE__.'\UniqueEntity');
+        }
+
         if (!is_array($constraint->fields) && !is_string($constraint->fields)) {
             throw new UnexpectedTypeException($constraint->fields, 'array');
         }
@@ -89,7 +93,7 @@ class UniqueEntityValidator extends ConstraintValidator
                 return;
             }
 
-            if ($class->hasAssociation($fieldName)) {
+            if (null !== $criteria[$fieldName] && $class->hasAssociation($fieldName)) {
                 /* Ensure the Proxy is initialized before using reflection to
                  * read its identifiers. This is necessary because the wrapped
                  * getter methods in the Proxy are being bypassed.

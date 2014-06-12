@@ -347,6 +347,7 @@ abstract class AbstractNumberFormatterTest extends \PHPUnit_Framework_TestCase
     {
         $formatter = $this->getNumberFormatter('en', NumberFormatter::DECIMAL);
 
+        $attributeRet = null;
         if (null !== $fractionDigits) {
             $attributeRet = $formatter->setAttribute(NumberFormatter::FRACTION_DIGITS, $fractionDigits);
         }
@@ -355,7 +356,7 @@ abstract class AbstractNumberFormatterTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($expected, $formattedValue);
         $this->assertSame($expectedFractionDigits, $formatter->getAttribute(NumberFormatter::FRACTION_DIGITS));
 
-        if (isset($attributeRet)) {
+        if (null !== $attributeRet) {
             $this->assertTrue($attributeRet);
         }
     }
@@ -379,6 +380,7 @@ abstract class AbstractNumberFormatterTest extends \PHPUnit_Framework_TestCase
     {
         $formatter = $this->getNumberFormatter('en', NumberFormatter::DECIMAL);
 
+        $attributeRet = null;
         if (null !== $groupingUsed) {
             $attributeRet = $formatter->setAttribute(NumberFormatter::GROUPING_USED, $groupingUsed);
         }
@@ -387,7 +389,7 @@ abstract class AbstractNumberFormatterTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($expected, $formattedValue);
         $this->assertSame($expectedGroupingUsed, $formatter->getAttribute(NumberFormatter::GROUPING_USED));
 
-        if (isset($attributeRet)) {
+        if (null !== $attributeRet) {
             $this->assertTrue($attributeRet);
         }
     }
@@ -778,7 +780,7 @@ abstract class AbstractNumberFormatterTest extends \PHPUnit_Framework_TestCase
     {
         $formatter = $this->getNumberFormatter('en', NumberFormatter::DECIMAL);
         $parsedValue = $formatter->parse($value, NumberFormatter::TYPE_DOUBLE);
-        $this->assertSame($expectedValue, $parsedValue);
+        $this->assertEquals($expectedValue, $parsedValue, '', 0.001);
     }
 
     public function parseTypeDoubleProvider()
@@ -823,14 +825,14 @@ abstract class AbstractNumberFormatterTest extends \PHPUnit_Framework_TestCase
     abstract protected function getIntlErrorMessage();
 
     /**
-     * @return integer
+     * @return int
      */
     abstract protected function getIntlErrorCode();
 
     /**
-     * @param integer $errorCode
+     * @param int     $errorCode
      *
-     * @return Boolean
+     * @return bool
      */
     abstract protected function isIntlFailure($errorCode);
 }

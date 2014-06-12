@@ -33,7 +33,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     public function testValidTrustedProxies($trustedProxies, $processedProxies)
     {
         $processor = new Processor();
-        $configuration = new Configuration(array());
+        $configuration = new Configuration();
         $config = $processor->processConfiguration($configuration, array(array(
             'secret'          => 's3cr3t',
             'trusted_proxies' => $trustedProxies
@@ -62,7 +62,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     public function testInvalidTypeTrustedProxies()
     {
         $processor = new Processor();
-        $configuration = new Configuration(array());
+        $configuration = new Configuration();
         $processor->processConfiguration($configuration, array(
             array(
                 'secret' => 's3cr3t',
@@ -77,7 +77,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     public function testInvalidValueTrustedProxies()
     {
         $processor = new Processor();
-        $configuration = new Configuration(array());
+        $configuration = new Configuration();
         $processor->processConfiguration($configuration, array(
             array(
                 'secret' => 's3cr3t',
@@ -126,7 +126,10 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
             'validation'          => array(
                 'enabled'            => false,
                 'enable_annotations' => false,
+                'static_method'      => array('loadClassMetadata'),
                 'translation_domain' => 'validators',
+                'strict_email'       => false,
+                'api'                => 'auto',
             ),
             'annotations'         => array(
                 'cache'          => 'file',
