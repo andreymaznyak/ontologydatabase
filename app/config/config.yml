@@ -77,57 +77,7 @@ knp_menu:
         template: knp_menu.html.twig
     templating: false # if true, enables the helper for PHP templates
     default_renderer: twig # The renderer to use, list is also available by default
-#sonata_block:
-#    default_contexts: [cms]
-#    blocks:
-#        sonata.admin.block.admin_list:
-#            contexts:   [admin]
 
-        #sonata.admin_doctrine_orm.block.audit:
-        #    contexts:   [admin]
-
-#        sonata.block.service.text:
-#        sonata.block.service.rss:
-#        sonata.user.block.menu:    # used to display the menu in profile pages
- #       sonata.user.block.account: # used to display menu option (login option)
-        # Some specific block from the SonataMediaBundle
-        #sonata.media.block.media:
-        #sonata.media.block.gallery:
-        #sonata.media.block.feature_media:
-#sonata_user:
-#    security_acl: true
-#    manager_type: orm # can be orm or mongodb
-
-# app/config/security.yml
-#security:
-    # [...]
-   # acl:
-    #    connection: default
-#fos_user:
-    #db_driver: orm 
-    #firewall_name: main
-    #user_class: Meta\OntologyCreateBundle\Entity\User
-    #group:
-        #group_class: Application\Sonata\UserBundle\Entity\Group
- #app/config/config.yml
-
-#fos_user:
-#    db_driver:      orm # can be orm or odm
-#    firewall_name:  main
-#    user_class:     Application\Sonata\UserBundle\Entity\User
-#    group:
-#        group_class:   Application\Sonata\UserBundle\Entity\Group
-#        group_manager: sonata.user.orm.group_manager                    # If you're using doctrine orm (use sonata.user.mongodb.user_manager for mongodb)
-#    service:
-#        user_manager: sonata.user.orm.user_manager                      # If you're using doctrine orm (use sonata.user.mongodb.group_manager for mongodb)
-
-#doctrine:
-#    orm:
-#        entity_managers:
-#            default:
-#                mappings:
-#                    ApplicationSonataUserBundle: ~
-#                    SonataUserBundle: ~
 fos_user:
     db_driver: orm
     firewall_name: main
@@ -168,6 +118,12 @@ sonata_admin:
         blocks:
             # display a dashboard block
             - { position: left, type: sonata.admin.block.admin_list }
+            - 
+                position: top
+                type: sonata.block.service.text
+                settings:
+                    content: >
+                        <p><a href="http://ontology/"> Back to home </a></p> <br/>
 
 sonata_doctrine_orm_admin:
     # default value is null, so doctrine uses the value defined in the configuration

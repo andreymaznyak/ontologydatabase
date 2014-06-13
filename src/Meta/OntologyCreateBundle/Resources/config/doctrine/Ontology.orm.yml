@@ -1,0 +1,29 @@
+Meta\OntologyCreateBundle\Entity\Ontology:
+    type: entity
+    table: ontology
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        description:
+            type: text
+    manyToMany:
+        extansions:
+            targetEntity: Ontology
+            joinTable:
+                name: ontology_extansions
+                joinColumns:
+                    ontology_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    extansion_id:
+                        referencedColumnName: id
+    manyToMany:
+        ontologeis:
+            targetEntity: Ontology
+            mappedBy: extansions
