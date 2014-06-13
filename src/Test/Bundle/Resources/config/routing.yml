@@ -2,6 +2,7 @@ test_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: TestBundle:Default:index }
     
-readme:
+home:
     pattern:  /
     defaults: { _controller: TestBundle:Default:readme }
+

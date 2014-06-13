@@ -5,7 +5,8 @@
 	
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
-		  <li><a href="{{ path('readme') }}">Readme</a></li>
+		  <li><a href="{{ path('home') }}">Home page</a></li>
+                  <li><a href="{{ '/admin' }}">admin</a></li>
 		  {% if app.environment != 'dev' %}
 			<li><a href="/app_dev.php">Dev</a></li>
 		  {% endif %}

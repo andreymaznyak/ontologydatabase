@@ -4,7 +4,10 @@
     "type": "project",
     "description": "The \"Symfony Standard Edition\" distribution",
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": { 
+            "": "src/", 
+            "Application": "app/" 
+        }
     },
     "require": {
         "php": ">=5.3.3",
@@ -28,7 +31,8 @@
         "sonata-project/jquery-bundle": "dev-master",
         "sonata-project/classification-bundle": "~2.2@dev",
         "sonata-project/easy-extends-bundle": "dev-master",
-        "sonata-project/datagrid-bundle": "~2.2@dev"
+        "sonata-project/datagrid-bundle": "~2.2@dev",
+        "jms/serializer-bundle": "dev-master"
         
     },
     "scripts": {

@@ -2362,65 +2362,6 @@
         ]
     },
     {
-        "name": "sonata-project/classification-bundle",
-        "version": "2.2.1",
-        "version_normalized": "2.2.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/sonata-project/SonataClassificationBundle.git",
-            "reference": "ba91df02cc8df88e26ca9ffe546cc1fddec5de1b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/sonata-project/SonataClassificationBundle/zipball/ba91df02cc8df88e26ca9ffe546cc1fddec5de1b",
-            "reference": "ba91df02cc8df88e26ca9ffe546cc1fddec5de1b",
-            "shasum": ""
-        },
-        "require": {
-            "sonata-project/core-bundle": "~2.2",
-            "sonata-project/doctrine-orm-admin-bundle": "~2.2@dev",
-            "symfony/symfony": "~2.2"
-        },
-        "suggest": {
-            "sonata-project/media-bundle": "~2.2"
-        },
-        "time": "2014-02-14 16:26:43",
-        "type": "symfony-bundle",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.2.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Sonata\\ClassificationBundle\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Thomas Rabaix",
-                "email": "thomas.rabaix@sonata-project.org",
-                "homepage": "http://sonata-project.org"
-            },
-            {
-                "name": "Sonata Community",
-                "homepage": "https://github.com/sonata-project/SonataClassificationBundle/contributors"
-            }
-        ],
-        "description": "Symfony SonataClassificationBundle",
-        "homepage": "http://sonata-project.org/bundles/classification",
-        "keywords": [
-            "category",
-            "tag",
-            "taxonomy"
-        ]
-    },
-    {
         "name": "sonata-project/easy-extends-bundle",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -2790,78 +2731,6 @@
         ],
         "description": "Library for (de-)serializing data of any complexity; supports XML, JSON, and YAML.",
         "homepage": "http://jmsyst.com/libs/serializer",
-        "keywords": [
-            "deserialization",
-            "jaxb",
-            "json",
-            "serialization",
-            "xml"
-        ]
-    },
-    {
-        "name": "jms/serializer-bundle",
-        "version": "0.13.0",
-        "version_normalized": "0.13.0.0",
-        "target-dir": "JMS/SerializerBundle",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/schmittjoh/JMSSerializerBundle.git",
-            "reference": "bb15db3e661168f4310fad48b86915ff1ca33795"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/bb15db3e661168f4310fad48b86915ff1ca33795",
-            "reference": "bb15db3e661168f4310fad48b86915ff1ca33795",
-            "shasum": ""
-        },
-        "require": {
-            "jms/serializer": "~0.11",
-            "php": ">=5.3.2",
-            "symfony/framework-bundle": "~2.1"
-        },
-        "require-dev": {
-            "doctrine/doctrine-bundle": "*",
-            "doctrine/orm": "*",
-            "symfony/browser-kit": "*",
-            "symfony/class-loader": "*",
-            "symfony/css-selector": "*",
-            "symfony/finder": "*",
-            "symfony/form": "*",
-            "symfony/process": "*",
-            "symfony/twig-bundle": "*",
-            "symfony/validator": "*",
-            "symfony/yaml": "*"
-        },
-        "suggest": {
-            "jms/di-extra-bundle": "Required to get lazy loading (de)serialization visitors, ~1.3"
-        },
-        "time": "2013-12-05 14:36:11",
-        "type": "symfony-bundle",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "0.13-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "JMS\\SerializerBundle": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "Apache2"
-        ],
-        "authors": [
-            {
-                "name": "Johannes M. Schmitt",
-                "email": "schmittjoh@gmail.com",
-                "homepage": "http://jmsyst.com",
-                "role": "Developer of wrapped JMSSerializerBundle"
-            }
-        ],
-        "description": "Allows you to easily serialize, and deserialize data of any complexity",
-        "homepage": "http://jmsyst.com/bundles/JMSSerializerBundle",
         "keywords": [
             "deserialization",
             "jaxb",
@@ -3420,6 +3289,137 @@
             "google authenticator",
             "sonata",
             "user"
+        ]
+    },
+    {
+        "name": "sonata-project/classification-bundle",
+        "version": "2.2.1",
+        "version_normalized": "2.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sonata-project/SonataClassificationBundle.git",
+            "reference": "ba91df02cc8df88e26ca9ffe546cc1fddec5de1b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sonata-project/SonataClassificationBundle/zipball/ba91df02cc8df88e26ca9ffe546cc1fddec5de1b",
+            "reference": "ba91df02cc8df88e26ca9ffe546cc1fddec5de1b",
+            "shasum": ""
+        },
+        "require": {
+            "sonata-project/core-bundle": "~2.2",
+            "sonata-project/doctrine-orm-admin-bundle": "~2.2@dev",
+            "symfony/symfony": "~2.2"
+        },
+        "suggest": {
+            "sonata-project/media-bundle": "~2.2"
+        },
+        "time": "2014-02-14 16:26:43",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.2.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Sonata\\ClassificationBundle\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Thomas Rabaix",
+                "email": "thomas.rabaix@sonata-project.org",
+                "homepage": "http://sonata-project.org"
+            },
+            {
+                "name": "Sonata Community",
+                "homepage": "https://github.com/sonata-project/SonataClassificationBundle/contributors"
+            }
+        ],
+        "description": "Symfony SonataClassificationBundle",
+        "homepage": "http://sonata-project.org/bundles/classification",
+        "keywords": [
+            "category",
+            "tag",
+            "taxonomy"
+        ]
+    },
+    {
+        "name": "jms/serializer-bundle",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "JMS/SerializerBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/schmittjoh/JMSSerializerBundle.git",
+            "reference": "ca66cd3ace6bea5367838c6dfb00a6a0bacb8a79"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/ca66cd3ace6bea5367838c6dfb00a6a0bacb8a79",
+            "reference": "ca66cd3ace6bea5367838c6dfb00a6a0bacb8a79",
+            "shasum": ""
+        },
+        "require": {
+            "jms/serializer": "~0.11",
+            "php": ">=5.3.2",
+            "symfony/framework-bundle": "~2.1"
+        },
+        "require-dev": {
+            "doctrine/doctrine-bundle": "*",
+            "doctrine/orm": "*",
+            "symfony/browser-kit": "*",
+            "symfony/class-loader": "*",
+            "symfony/css-selector": "*",
+            "symfony/finder": "*",
+            "symfony/form": "*",
+            "symfony/process": "*",
+            "symfony/twig-bundle": "*",
+            "symfony/validator": "*",
+            "symfony/yaml": "*"
+        },
+        "suggest": {
+            "jms/di-extra-bundle": "Required to get lazy loading (de)serialization visitors, ~1.3"
+        },
+        "time": "2014-02-09 12:04:09",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.13-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "JMS\\SerializerBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache2"
+        ],
+        "authors": [
+            {
+                "name": "Johannes M. Schmitt",
+                "email": "schmittjoh@gmail.com",
+                "homepage": "http://jmsyst.com",
+                "role": "Developer of wrapped JMSSerializerBundle"
+            }
+        ],
+        "description": "Allows you to easily serialize, and deserialize data of any complexity",
+        "homepage": "http://jmsyst.com/bundles/JMSSerializerBundle",
+        "keywords": [
+            "deserialization",
+            "jaxb",
+            "json",
+            "serialization",
+            "xml"
         ]
     }
 ]

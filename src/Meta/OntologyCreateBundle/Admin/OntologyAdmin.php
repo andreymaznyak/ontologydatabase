@@ -9,31 +9,5 @@ use Sonata\AdminBundle\Form\FormMapper;
  
 class OntologyAdmin extends Admin
 {
-    // Fields to be shown on create/edit forms
-    protected function configureFormFields(FormMapper $formMapper)
-    {
-        $formMapper
-            ->add('title', 'text', array('label' => 'Ontology Title'))
-            ->add('body') //if no type is specified, SonataAdminBundle tries to guess it
-        ;
-    }
-
-    // Fields to be shown on filter forms
-    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
-    {
-        $datagridMapper
-            ->add('title')
-            ->add('author')
-        ;
-    }
-
-    // Fields to be shown on lists
-    protected function configureListFields(ListMapper $listMapper)
-    {
-        $listMapper
-            ->addIdentifier('title')
-            ->add('slug')
-            ->add('author')
-        ;
-    }
+    // Your code will be here
 }
