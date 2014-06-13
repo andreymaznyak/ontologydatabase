@@ -2,6 +2,8 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: sonata_core.yml }
+    - { resource: sonata_classification.yml }
+
 framework:
     #esi:             ~
     #translator:      { fallback: "%locale%" }
@@ -59,6 +61,7 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
+       
 
 # Swiftmailer Configuration
 swiftmailer:
