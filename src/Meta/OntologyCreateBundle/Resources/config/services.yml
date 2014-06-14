@@ -1,16 +1,6 @@
-parameters:
-#    meta_ontology.example.class: Meta\OntologyCreateBundle\Example
-
-#services:
-#    meta_ontology.example:
-#        class: %meta_ontology.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
 services:
-    meta.ontologycreate.admin.ontology:
+    meta_ontology.admin.ontology:
         class: Meta\OntologyCreateBundle\Admin\OntologyAdmin
+        arguments: [~, Meta\OntologyCreateBundle\Entity\Ontology, MetaOntologyBundle:OntologyAdmin]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: ontology, label: Ontologies }
-        arguments:
-            - ~
-            - Meta\OntologyCreateBundle\Entity\Ontology
-            - 'MetaOntologyCreateBundle:OntologyAdmin'
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Ontology}

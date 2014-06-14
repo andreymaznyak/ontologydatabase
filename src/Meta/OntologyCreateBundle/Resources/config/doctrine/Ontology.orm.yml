@@ -27,3 +27,13 @@ Meta\OntologyCreateBundle\Entity\Ontology:
         ontologeis:
             targetEntity: Ontology
             mappedBy: extansions
+    oneToMany:
+      children:
+        targetEntity: Ontology
+        mappedBy: parent
+    manyToOne:
+      parent:
+        targetEntity: Ontology
+        inversedBy: children
+        JoinColumn: parent_id
+        referencedColumnName: id
