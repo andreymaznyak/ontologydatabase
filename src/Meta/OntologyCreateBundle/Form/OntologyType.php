@@ -17,6 +17,7 @@ class OntologyType extends AbstractType
         $builder
             ->add('name')
             ->add('description')
+            ->add('parent')
             ->add('extansions')
         ;
     }
