@@ -32,7 +32,8 @@
         "sonata-project/classification-bundle": "~2.2@dev",
         "sonata-project/easy-extends-bundle": "dev-master",
         "sonata-project/datagrid-bundle": "~2.2@dev",
-        "jms/serializer-bundle": "dev-master"
+        "jms/serializer-bundle": "dev-master",
+        "gedmo/doctrine-extensions": "dev-master"
         
     },
     "scripts": {
