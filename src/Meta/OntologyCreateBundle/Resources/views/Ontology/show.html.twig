@@ -8,7 +8,12 @@
     <dl class="dl-horizontal">                <dt>Id</dt>
                 <dd>{{ entity.id }}</dd>                <dt>Name</dt>
                 <dd>{{ entity.name }}</dd>                <dt>Description</dt>
-                <dd>{{ entity.description }}</dd>	</dl>
+                <dd>{{ entity.description }}</dd>                <dt>Title</dt>
+                <dd>{{ entity.title }}</dd>                <dt>Lft</dt>
+                <dd>{{ entity.lft }}</dd>                <dt>Rgt</dt>
+                <dd>{{ entity.rgt }}</dd>                <dt>Root</dt>
+                <dd>{{ entity.root }}</dd>                <dt>Lvl</dt>
+                <dd>{{ entity.lvl }}</dd>	</dl>
 
 {% endblock %}
 
@@ -21,9 +26,9 @@
 		<span class="sr-only">Toggle Dropdown</span>
 		</button>
 		<ul class="dropdown-menu" role="menu">
-			<li><a href="{{ path('ontology') }}">Back to the list</a></li>
+			<li><a href="{{ path('list') }}">Back to the list</a></li>
 							<li>
-					<a href="{{ path('ontology_edit', { 'id': entity.id }) }}">
+					<a href="{{ path('list_edit', { 'id': entity.id }) }}">
 						Edit
 					</a>
 				</li>

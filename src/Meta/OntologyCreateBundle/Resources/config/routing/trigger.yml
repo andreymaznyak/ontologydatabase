@@ -1,0 +1,30 @@
+trigger:
+    pattern:  /
+    defaults: { _controller: "MetaOntologyBundle:Trigger:index" }
+
+trigger_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "MetaOntologyBundle:Trigger:show" }
+
+trigger_new:
+    pattern:  /new
+    defaults: { _controller: "MetaOntologyBundle:Trigger:new" }
+
+trigger_create:
+    pattern:  /create
+    defaults: { _controller: "MetaOntologyBundle:Trigger:create" }
+    requirements: { _method: post }
+
+trigger_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "MetaOntologyBundle:Trigger:edit" }
+
+trigger_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "MetaOntologyBundle:Trigger:update" }
+    requirements: { _method: post|put }
+
+trigger_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "MetaOntologyBundle:Trigger:delete" }
+    requirements: { _method: post|delete }

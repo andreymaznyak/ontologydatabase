@@ -1,0 +1,30 @@
+Meta\OntologyCreateBundle\Entity\ObjectRelations:
+    type: entity
+    table: objectrelations
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        description:
+            type: text
+        type:
+            type: string
+            length: 64
+    manyToOne:
+        firstobject:
+            targetEntity: Object
+            inversedBy: objects
+            joinColumn:
+                name: firstobject_id
+                referencedColumnName: id
+        object:
+            targetEntity: Object
+            inversedBy: objects
+            joinColumn:
+                name: object_id
+                referencedColumnName: id

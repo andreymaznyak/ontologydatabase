@@ -1,0 +1,30 @@
+subjectarea:
+    pattern:  /
+    defaults: { _controller: "MetaOntologyBundle:SubjectArea:index" }
+
+subjectarea_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "MetaOntologyBundle:SubjectArea:show" }
+
+subjectarea_new:
+    pattern:  /new
+    defaults: { _controller: "MetaOntologyBundle:SubjectArea:new" }
+
+subjectarea_create:
+    pattern:  /create
+    defaults: { _controller: "MetaOntologyBundle:SubjectArea:create" }
+    requirements: { _method: post }
+
+subjectarea_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "MetaOntologyBundle:SubjectArea:edit" }
+
+subjectarea_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "MetaOntologyBundle:SubjectArea:update" }
+    requirements: { _method: post|put }
+
+subjectarea_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "MetaOntologyBundle:SubjectArea:delete" }
+    requirements: { _method: post|delete }

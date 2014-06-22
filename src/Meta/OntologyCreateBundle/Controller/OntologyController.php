@@ -44,7 +44,7 @@ class OntologyController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('ontology_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('list_show', array('id' => $entity->getId())));
         }
 
         return $this->render('MetaOntologyBundle:Ontology:new.html.twig', array(
@@ -63,7 +63,7 @@ class OntologyController extends Controller
     private function createCreateForm(Ontology $entity)
     {
         $form = $this->createForm(new OntologyType(), $entity, array(
-            'action' => $this->generateUrl('ontology_create'),
+            'action' => $this->generateUrl('list_create'),
             'method' => 'POST',
         ));
 
@@ -142,7 +142,7 @@ class OntologyController extends Controller
     private function createEditForm(Ontology $entity)
     {
         $form = $this->createForm(new OntologyType(), $entity, array(
-            'action' => $this->generateUrl('ontology_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('list_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -171,7 +171,7 @@ class OntologyController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('ontology_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('list_edit', array('id' => $id)));
         }
 
         return $this->render('MetaOntologyBundle:Ontology:edit.html.twig', array(
@@ -201,7 +201,7 @@ class OntologyController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('ontology'));
+        return $this->redirect($this->generateUrl('list'));
     }
 
     /**
@@ -214,7 +214,7 @@ class OntologyController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('ontology_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('list_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

@@ -1,0 +1,30 @@
+ontologyrestriction:
+    pattern:  /
+    defaults: { _controller: "MetaOntologyBundle:OntologyRestriction:index" }
+
+ontologyrestriction_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "MetaOntologyBundle:OntologyRestriction:show" }
+
+ontologyrestriction_new:
+    pattern:  /new
+    defaults: { _controller: "MetaOntologyBundle:OntologyRestriction:new" }
+
+ontologyrestriction_create:
+    pattern:  /create
+    defaults: { _controller: "MetaOntologyBundle:OntologyRestriction:create" }
+    requirements: { _method: post }
+
+ontologyrestriction_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "MetaOntologyBundle:OntologyRestriction:edit" }
+
+ontologyrestriction_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "MetaOntologyBundle:OntologyRestriction:update" }
+    requirements: { _method: post|put }
+
+ontologyrestriction_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "MetaOntologyBundle:OntologyRestriction:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,46 @@
+Meta\OntologyCreateBundle\Entity\Object:
+    type: entity
+    table: objects
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        description:
+            type: text
+        timestore:
+            type: integer    
+    #Внешние ключи
+    manyToOne:
+        ontology:
+            targetEntity: Ontology
+            inversedBy: objects
+            joinColumn:
+                name: ontology_id
+                referencedColumnName: id
+    #Связанные со мной
+    oneToMany:
+        attributties:
+            targetEntity: Attribute
+            mappedBy: object
+        datatypes:
+            targetEntity: DataType
+            mappedBy: object
+        firstrelation:
+            targetEntity: ObjectRelations
+            mappedBy: firstobject
+        relation:
+            targetEntity: ObjectRelations
+            mappedBy: object
+    manyToMany:
+        processes:
+            targetEntity: OntologyProcess
+            mappedBy: objects
+        ontologyrestrictions:
+            targetEntity: OntologyRestriction
+            mappedBy: objects
+        

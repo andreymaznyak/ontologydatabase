@@ -1,0 +1,38 @@
+Meta\OntologyCreateBundle\Entity\Attribute:
+    type: entity
+    table: attributies
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        description:
+            type: text
+        timestore:
+            type: integer
+    #Внешние ключи
+    manyToOne:
+        object:
+            targetEntity: Object
+            inversedBy: attributties
+            joinColumn:
+                name: object_id
+                referencedColumnName: id
+        attributedatatype:
+            targetEntity: DataType
+            inversedBy: attributties
+            joinColumn:
+                name: datatype_id
+                referencedColumnName: id
+        attributerestriction:
+            targetEntity: AttributeRestriction
+            inversedBy: attributties
+            joinColumn:
+                name: attributerestriction_id
+                referencedColumnName: id
+    #Связанные со мной
+    

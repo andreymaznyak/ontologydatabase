@@ -1,0 +1,30 @@
+attributerestriction:
+    pattern:  /
+    defaults: { _controller: "MetaOntologyBundle:AttributeRestriction:index" }
+
+attributerestriction_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "MetaOntologyBundle:AttributeRestriction:show" }
+
+attributerestriction_new:
+    pattern:  /new
+    defaults: { _controller: "MetaOntologyBundle:AttributeRestriction:new" }
+
+attributerestriction_create:
+    pattern:  /create
+    defaults: { _controller: "MetaOntologyBundle:AttributeRestriction:create" }
+    requirements: { _method: post }
+
+attributerestriction_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "MetaOntologyBundle:AttributeRestriction:edit" }
+
+attributerestriction_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "MetaOntologyBundle:AttributeRestriction:update" }
+    requirements: { _method: post|put }
+
+attributerestriction_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "MetaOntologyBundle:AttributeRestriction:delete" }
+    requirements: { _method: post|delete }

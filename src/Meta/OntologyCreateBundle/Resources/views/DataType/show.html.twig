@@ -1,0 +1,40 @@
+{% extends '::base.bs.html.twig' %}
+
+{% block title -%}DataType{% endblock %}
+{% block body_heading -%}<div class="panel-heading">DataType</div>{% endblock %}
+
+{% block body -%}
+
+    <dl class="dl-horizontal">                <dt>Id</dt>
+                <dd>{{ entity.id }}</dd>                <dt>Name</dt>
+                <dd>{{ entity.name }}</dd>                <dt>Description</dt>
+                <dd>{{ entity.description }}</dd>                <dt>Title</dt>
+                <dd>{{ entity.title }}</dd>                <dt>Lft</dt>
+                <dd>{{ entity.lft }}</dd>                <dt>Rgt</dt>
+                <dd>{{ entity.rgt }}</dd>                <dt>Root</dt>
+                <dd>{{ entity.root }}</dd>                <dt>Lvl</dt>
+                <dd>{{ entity.lvl }}</dd>                <dt>Iscompositedatatype</dt>
+                <dd>{{ entity.iscompositedatatype }}</dd>	</dl>
+
+{% endblock %}
+
+{% block body_footer -%}
+	    <div class="panel-footer">
+	<div class="btn-group">
+		<button type="button" class="btn btn-default">Actions</button>
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		<span class="caret"></span>
+		<span class="sr-only">Toggle Dropdown</span>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="{{ path('datatype') }}">Back to the list</a></li>
+							<li>
+					<a href="{{ path('datatype_edit', { 'id': entity.id }) }}">
+						Edit
+					</a>
+				</li>
+										<li><a href="#">{{ form(delete_form) }}</a></li>
+					</ul>
+		</div>
+</div>
+{% endblock %}

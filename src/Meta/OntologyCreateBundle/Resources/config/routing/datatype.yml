@@ -1,0 +1,30 @@
+datatype:
+    pattern:  /
+    defaults: { _controller: "MetaOntologyBundle:DataType:index" }
+
+datatype_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "MetaOntologyBundle:DataType:show" }
+
+datatype_new:
+    pattern:  /new
+    defaults: { _controller: "MetaOntologyBundle:DataType:new" }
+
+datatype_create:
+    pattern:  /create
+    defaults: { _controller: "MetaOntologyBundle:DataType:create" }
+    requirements: { _method: post }
+
+datatype_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "MetaOntologyBundle:DataType:edit" }
+
+datatype_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "MetaOntologyBundle:DataType:update" }
+    requirements: { _method: post|put }
+
+datatype_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "MetaOntologyBundle:DataType:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,52 @@
+Meta\OntologyCreateBundle\Entity\OntologyRestriction:
+    type: entity
+    table: ontologyrestrictions
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        description:
+            type: text
+        value:
+            type: text
+    #Внешние ключи
+    manyToOne:
+        ontology:
+            targetEntity: Ontology
+            inversedBy: restrictions
+            joinColumn:
+                name: ontology_id
+                referencedColumnName: id
+        restrictiontype:
+            targetEntity: RestrictionType
+            inversedBy: restrictions
+            joinColumn:
+                name: restrictiontype_id
+                referencedColumnName: id
+    manyToMany:
+        objects:
+            targetEntity: Object
+            joinTable:
+                name: ontologyrestriction_objects
+                joinColumns:
+                    ontologyrestriction_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    objects_id:
+                        referencedColumnName: id
+        processes:
+            targetEntity: OntologyProcess
+            joinTable:
+                name: ontologyrestriction_process
+                joinColumns:
+                    ontologyrestriction_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    ontologyprocess_id:
+                        referencedColumnName: id
+    #Связанные со мной

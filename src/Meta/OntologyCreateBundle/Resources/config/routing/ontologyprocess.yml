@@ -1,0 +1,30 @@
+process:
+    pattern:  /
+    defaults: { _controller: "MetaOntologyBundle:OntologyProcess:index" }
+
+process_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "MetaOntologyBundle:OntologyProcess:show" }
+
+process_new:
+    pattern:  /new
+    defaults: { _controller: "MetaOntologyBundle:OntologyProcess:new" }
+
+process_create:
+    pattern:  /create
+    defaults: { _controller: "MetaOntologyBundle:OntologyProcess:create" }
+    requirements: { _method: post }
+
+process_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "MetaOntologyBundle:OntologyProcess:edit" }
+
+process_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "MetaOntologyBundle:OntologyProcess:update" }
+    requirements: { _method: post|put }
+
+process_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "MetaOntologyBundle:OntologyProcess:delete" }
+    requirements: { _method: post|delete }

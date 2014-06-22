@@ -1,0 +1,30 @@
+object:
+    pattern:  /
+    defaults: { _controller: "MetaOntologyBundle:Object:index" }
+
+object_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "MetaOntologyBundle:Object:show" }
+
+object_new:
+    pattern:  /new
+    defaults: { _controller: "MetaOntologyBundle:Object:new" }
+
+object_create:
+    pattern:  /create
+    defaults: { _controller: "MetaOntologyBundle:Object:create" }
+    requirements: { _method: post }
+
+object_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "MetaOntologyBundle:Object:edit" }
+
+object_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "MetaOntologyBundle:Object:update" }
+    requirements: { _method: post|put }
+
+object_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "MetaOntologyBundle:Object:delete" }
+    requirements: { _method: post|delete }
