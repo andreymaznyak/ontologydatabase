@@ -1,0 +1,81 @@
+Meta\OntologyCreateBundle\Entity\OntologyProcess:
+    type: entity
+    table: ontologyprocess
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        description:
+            type: text
+        algorithm:
+            type: text
+        period:
+            type: integer
+        periodtype:
+            type: string
+    #Внешние ключи
+    manyToMany:
+        starttrigger:
+            targetEntity: Trigger
+            joinTable:
+                name: starttrigger_process
+                joinColumns:
+                    ontologyprocess_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    trigger_id:
+                        referencedColumnName: id
+        stoptrigger:
+            targetEntity: Trigger
+            joinTable:
+                name: stoptrigger_process
+                joinColumns:
+                    ontologyprocess_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    trigger_id:
+                        referencedColumnName: id
+        objects:
+            targetEntity: Object
+            joinTable:
+                name: ontologyprocess_objects
+                joinColumns:
+                    ontologyprocess_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    object_id:
+                        referencedColumnName: id
+        extansions:
+            targetEntity: OntologyProcess
+            joinTable:
+                name: ontologyprocess_extansions
+                joinColumns:
+                    ontologyprocess_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    extansion_id:
+                        referencedColumnName: id
+        ontologeis:
+            targetEntity: OntologyProcess
+            mappedBy: extansions
+        ontologyrestrictions:
+            targetEntity: OntologyRestriction
+            mappedBy: processes
+    manyToOne:
+        ontology:
+            targetEntity: Ontology
+            inversedBy: processes
+            joinColumn:
+                name: ontology_id
+                referencedColumnName: id
+    #Связанные со мной
+    oneToMany:
+        datatypesinprocess:
+            targetEntity: DataType
+            mappedBy: ontologyprocess
+    

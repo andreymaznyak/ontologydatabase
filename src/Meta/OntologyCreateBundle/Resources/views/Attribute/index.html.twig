@@ -1,0 +1,38 @@
+{% extends '::base.bs.html.twig' %}
+
+{% block title -%}Attribute list{% endblock %}
+{% block body_heading -%}<div class="panel-heading">Attribute list</div>{% endblock %}
+
+{% block body -%}
+    <table class="records_list table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Timestore</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('attribute_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.timestore }}</td>
+                <td>
+                        <a class="btn btn-default" rel="tooltip" title="show" href="{{ path('attribute_show', { 'id': entity.id }) }}">show</a>
+                        <a class="btn btn-default" rel="tooltip" title="edit" href="{{ path('attribute_edit', { 'id': entity.id }) }}">edit</a>                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+{% block body_footer -%}
+	<div class="panel-footer">
+		<a class="btn btn-default" rel="tooltip" title="Create a new entry" href="{{ path('attribute_new') }}">Create a new entry</a>
+	</div>
+{% endblock %}

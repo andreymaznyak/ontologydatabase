@@ -1,0 +1,20 @@
+Meta\OntologyCreateBundle\Entity\AttributeRestriction:
+    type: entity
+    table: attributerestrictions
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        description:
+            type: text
+    #Внешние ключи
+    #Связанные со мной
+    oneToMany:
+        attributties:
+            targetEntity: Attribute
+            mappedBy: attributerestriction

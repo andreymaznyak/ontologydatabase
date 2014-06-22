@@ -1,0 +1,21 @@
+Meta\OntologyCreateBundle\Entity\SubjectArea:
+    type: entity
+    table: subjectareas
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        description:
+            type: text
+    #Внешние ключи
+    #Связанные со мной
+    oneToMany:
+        ontologyarea:
+            targetEntity: Ontology
+            mappedBy: subjectarea        
+   

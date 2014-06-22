@@ -1,0 +1,27 @@
+{% extends '::base.bs.html.twig' %}
+
+{% form_theme edit_form 'fields.bs.html.twig' %}
+{% block title -%}Constant edit{% endblock %}
+{% block body_heading -%}<div class="panel-heading">Constant edit</div>{% endblock %}
+
+{% block body -%}
+    
+    {{ form(edit_form) }}
+    
+{% endblock %}
+
+{% block body_footer -%}
+		<div class="panel-footer">
+	<div class="btn-group">
+		<button type="button" class="btn btn-default">Actions</button>
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		<span class="caret"></span>
+		<span class="sr-only">Toggle Dropdown</span>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="{{ path('constant') }}">Back to the list</a></li>
+										<li><a href="#">{{ form(delete_form) }}</a></li>
+					</ul>
+		</div>
+</div>
+{% endblock %}

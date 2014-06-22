@@ -1,0 +1,31 @@
+Meta\OntologyCreateBundle\Entity\Constant:
+    type: entity
+    table: constants
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        description:
+            type: text
+        value:
+            type: string
+            length: 255
+    #Внешние ключи
+    manyToOne:
+        ontology:
+            targetEntity: Ontology
+            inversedBy: constants
+            joinColumn:
+                name: ontology_id
+                referencedColumnName: id
+    #Связанные со мной
+    oneToMany:
+        datatypes:
+            targetEntity: DataType
+            mappedBy: constant
+    

@@ -1,0 +1,86 @@
+Meta\OntologyCreateBundle\Entity\DataType:
+    type: entity
+    repositoryClass: Gedmo\Tree\Entity\Repository\NestedTreeRepository
+    table: datatypes
+    gedmo:
+        tree:
+          type: nested
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        description:
+            type: text
+        title:
+            type: string
+            length: 64
+        lft:
+            type: integer
+            gedmo:
+                  - treeLeft
+        rgt:
+            type: integer
+            gedmo:
+                  - treeRight
+        root:
+            type: integer
+            nullable: true
+            gedmo:
+                  - treeRoot
+        lvl:
+            type: integer
+            gedmo:
+                  - treeLevel
+        iscompositedatatype:
+            type: boolean
+    #Внешние ключи
+    manyToOne:
+        parent:
+            targetEntity: DataType
+            inversedBy: children
+            joinColumn:
+                name: parent_id
+                referencedColumnName: id
+                onDelete: CASCADE
+            gedmo:
+                - treeParent
+        object:
+            targetEntity: Object
+            inversedBy: datatypes
+            joinColumn:
+                name: object_id
+                referencedColumnName: id
+        ontologyprocess:
+            targetEntity: OntologyProcess
+            inversedBy: datatypesinprocess
+            joinColumn:
+                name: ontologyprocess_id
+                referencedColumnName: id
+                nullable: FALSE
+        simpledatatype:
+            targetEntity: SimpleDataType
+            inversedBy: datatypes
+            joinColumn:
+                name: simpledatatype_id
+                referencedColumnName: id
+        constant:
+            targetEntity: Constant
+            inversedBy: datatypes
+            joinColumn:
+                name: constant_id
+                referencedColumnName: id          
+    #Связанные со мной
+    oneToMany:
+        attributties:
+            targetEntity: Attribute
+            mappedBy: attributedatatype
+        children:
+            targetEntity: DataType
+            mappedBy: parent
+            orderBy:
+                lft: ASC

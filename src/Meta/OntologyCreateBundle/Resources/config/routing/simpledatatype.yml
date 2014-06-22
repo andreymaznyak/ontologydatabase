@@ -1,0 +1,30 @@
+simpledatatype:
+    pattern:  /
+    defaults: { _controller: "MetaOntologyBundle:SimpleDataType:index" }
+
+simpledatatype_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "MetaOntologyBundle:SimpleDataType:show" }
+
+simpledatatype_new:
+    pattern:  /new
+    defaults: { _controller: "MetaOntologyBundle:SimpleDataType:new" }
+
+simpledatatype_create:
+    pattern:  /create
+    defaults: { _controller: "MetaOntologyBundle:SimpleDataType:create" }
+    requirements: { _method: post }
+
+simpledatatype_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "MetaOntologyBundle:SimpleDataType:edit" }
+
+simpledatatype_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "MetaOntologyBundle:SimpleDataType:update" }
+    requirements: { _method: post|put }
+
+simpledatatype_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "MetaOntologyBundle:SimpleDataType:delete" }
+    requirements: { _method: post|delete }

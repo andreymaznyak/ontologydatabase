@@ -1,0 +1,37 @@
+{% extends '::base.bs.html.twig' %}
+
+{% block title -%}OntologyProcess{% endblock %}
+{% block body_heading -%}<div class="panel-heading">OntologyProcess</div>{% endblock %}
+
+{% block body -%}
+
+    <dl class="dl-horizontal">                <dt>Id</dt>
+                <dd>{{ entity.id }}</dd>                <dt>Name</dt>
+                <dd>{{ entity.name }}</dd>                <dt>Description</dt>
+                <dd>{{ entity.description }}</dd>                <dt>Algorithm</dt>
+                <dd>{{ entity.algorithm }}</dd>                <dt>Period</dt>
+                <dd>{{ entity.period }}</dd>                <dt>Periodtype</dt>
+                <dd>{{ entity.periodtype }}</dd>	</dl>
+
+{% endblock %}
+
+{% block body_footer -%}
+	    <div class="panel-footer">
+	<div class="btn-group">
+		<button type="button" class="btn btn-default">Actions</button>
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		<span class="caret"></span>
+		<span class="sr-only">Toggle Dropdown</span>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="{{ path('process') }}">Back to the list</a></li>
+							<li>
+					<a href="{{ path('process_edit', { 'id': entity.id }) }}">
+						Edit
+					</a>
+				</li>
+										<li><a href="#">{{ form(delete_form) }}</a></li>
+					</ul>
+		</div>
+</div>
+{% endblock %}

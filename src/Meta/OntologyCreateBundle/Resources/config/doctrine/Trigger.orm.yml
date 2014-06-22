@@ -1,0 +1,26 @@
+Meta\OntologyCreateBundle\Entity\Trigger:
+    type: entity
+    table: triggers
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        description:
+            type: text
+        typeAction:
+            type: string
+            length: 255
+    #Внешние ключи
+    #Связанные со мной
+    manyToMany:
+        startprocesses:
+            targetEntity: OntologyProcess
+            mappedBy: starttrigger
+        stopprocesses:
+            targetEntity: OntologyProcess
+            mappedBy: stoptrigger

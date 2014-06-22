@@ -1,6 +1,10 @@
 Meta\OntologyCreateBundle\Entity\Ontology:
     type: entity
-    table: ontology
+    repositoryClass: Gedmo\Tree\Entity\Repository\NestedTreeRepository
+    table: ontologies
+    gedmo:
+        tree:
+          type: nested
     id:
         id:
             type: integer
@@ -12,7 +16,54 @@ Meta\OntologyCreateBundle\Entity\Ontology:
             unique: true
         description:
             type: text
+        title:
+          type: string
+          length: 64
+        lft:
+          type: integer
+          gedmo:
+            - treeLeft
+        rgt:
+          type: integer
+          gedmo:
+            - treeRight
+        root:
+          type: integer
+          nullable: true
+          gedmo:
+            - treeRoot
+        lvl:
+          type: integer
+          gedmo:
+            - treeLevel
+    manyToOne:
+        parent:
+            targetEntity: Ontology
+            inversedBy: children
+            joinColumn:
+                name: parent_id
+                referencedColumnName: id
+                onDelete: CASCADE
+            gedmo:
+                - treeParent
+        subjectarea:
+            targetEntity: SubjectArea
+            inversedBy: ontologyarea
+            joinColumn:
+                name: subjectarea_id
+                referencedColumnName: id
+    #Внешние ключи
     manyToMany:
+        includies:
+            targetEntity: Ontology
+            joinTable:
+                name: ontology_includies
+                joinColumns:
+                    ontology_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    includies_id:
+                        referencedColumnName: id
         extansions:
             targetEntity: Ontology
             joinTable:
@@ -23,17 +74,27 @@ Meta\OntologyCreateBundle\Entity\Ontology:
                 inverseJoinColumns:
                     extansion_id:
                         referencedColumnName: id
-    manyToMany:
         ontologeis:
             targetEntity: Ontology
             mappedBy: extansions
+        ontologeisincludies:
+            targetEntity: Ontology
+            mappedBy: includies
     oneToMany:
-      children:
-        targetEntity: Ontology
-        mappedBy: parent
-    manyToOne:
-      parent:
-        targetEntity: Ontology
-        inversedBy: children
-        JoinColumn: parent_id
-        referencedColumnName: id
+        objects:
+            targetEntity: Object
+            mappedBy: ontology
+        processes:
+            targetEntity: OntologyProcess
+            mappedBy: ontology
+        restrictions:
+            targetEntity: OntologyRestriction
+            mappedBy: ontology
+        constants:
+            targetEntity: Constant
+            mappedBy: ontology
+        children:
+            targetEntity: Ontology
+            mappedBy: parent
+            orderBy:
+                lft: ASC
