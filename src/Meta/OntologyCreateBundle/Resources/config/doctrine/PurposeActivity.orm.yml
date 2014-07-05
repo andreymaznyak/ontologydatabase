@@ -1,0 +1,16 @@
+Meta\OntologyCreateBundle\Entity\PurposeActivity:
+    type: entity
+    table: purposeactivities
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+    oneToMany:
+        legalentities:
+            targetEntity: LegalEntity
+            mappedBy: purposeactivity     

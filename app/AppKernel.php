@@ -16,7 +16,6 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Test\Bundle\TestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\IntlBundle\SonataIntlBundle(),
@@ -29,7 +28,10 @@ class AppKernel extends Kernel
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            new Test\Bundle\TestBundle(),
             new Meta\OntologyCreateBundle\MetaOntologyBundle(),
+            new Meta\ResumeBundle\MetaResumeBundle(),
+            new Meta\ClassificationLegalEntitiesBundle\MetaClassificationLegalEntitiesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

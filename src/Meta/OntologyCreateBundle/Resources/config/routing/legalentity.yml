@@ -1,0 +1,30 @@
+legalentity:
+    pattern:  /
+    defaults: { _controller: "MetaOntologyBundle:LegalEntity:index" }
+
+legalentity_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "MetaOntologyBundle:LegalEntity:show" }
+
+legalentity_new:
+    pattern:  /new
+    defaults: { _controller: "MetaOntologyBundle:LegalEntity:new" }
+
+legalentity_create:
+    pattern:  /create
+    defaults: { _controller: "MetaOntologyBundle:LegalEntity:create" }
+    requirements: { _method: post }
+
+legalentity_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "MetaOntologyBundle:LegalEntity:edit" }
+
+legalentity_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "MetaOntologyBundle:LegalEntity:update" }
+    requirements: { _method: post|put }
+
+legalentity_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "MetaOntologyBundle:LegalEntity:delete" }
+    requirements: { _method: post|delete }

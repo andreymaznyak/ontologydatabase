@@ -16,14 +16,13 @@ class DataTypeAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
             ->add('name')
-            ->add('description')
-            ->add('title')
-            ->add('lft')
-            ->add('rgt')
-            ->add('root')
-            ->add('lvl')
+            ->add('parent')
+            ->add('object')
+            ->add('ontologyprocess')
+            ->add('simpledatatype')
+            ->add('constant')
+            
             ->add('iscompositedatatype')
         ;
     }
@@ -34,15 +33,15 @@ class DataTypeAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
             ->add('name')
             ->add('description')
-            ->add('title')
-            ->add('lft')
-            ->add('rgt')
-            ->add('root')
-            ->add('lvl')
             ->add('iscompositedatatype')
+            ->add('parent')
+            ->add('object')
+            ->add('ontologyprocess')
+            ->add('simpledatatype')
+            ->add('constant')
+            
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -59,15 +58,15 @@ class DataTypeAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('id')
             ->add('name')
             ->add('description')
-            ->add('title')
-            ->add('lft')
-            ->add('rgt')
-            ->add('root')
-            ->add('lvl')
             ->add('iscompositedatatype')
+            ->add('parent')
+            ->add('object')
+            ->add('ontologyprocess')
+            ->add('simpledatatype')
+            ->add('constant')
+            
         ;
     }
 
@@ -77,15 +76,15 @@ class DataTypeAdmin extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('id')
             ->add('name')
             ->add('description')
-            ->add('title')
-            ->add('lft')
-            ->add('rgt')
-            ->add('root')
-            ->add('lvl')
             ->add('iscompositedatatype')
+            ->add('parent')
+            ->add('object')
+            ->add('ontologyprocess')
+            ->add('simpledatatype')
+            ->add('constant')
+            
         ;
     }
 }

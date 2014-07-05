@@ -125,4 +125,8 @@ class SubjectArea
     {
         return $this->ontologyarea;
     }
+    
+    public function __toString() {
+        return $this->name;
+    }
 }

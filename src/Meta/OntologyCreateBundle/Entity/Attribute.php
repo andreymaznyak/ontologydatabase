@@ -192,4 +192,8 @@ class Attribute
     {
         return $this->attributerestriction;
     }
+    
+    public function __toString() {
+        return $this->name;
+    }
 }

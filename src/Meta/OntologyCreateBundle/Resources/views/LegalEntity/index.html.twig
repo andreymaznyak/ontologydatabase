@@ -1,0 +1,28 @@
+{% extends '::base.bs.html.twig' %}
+
+{% block title -%}Список организационно-провавых форм{% endblock %}
+{% block body_heading -%}<div class="panel-heading">Список организационно-провавых форм</div>{% endblock %}
+
+{% block body -%}
+    <table class="records_list table table-hover">
+        <thead>
+            <tr>
+                <th>Название</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('legalentity_show', { 'id': entity.id }) }}">{{ entity.name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+{% block body_footer -%}
+	<div class="panel-footer">
+		
+	</div>
+{% endblock %}

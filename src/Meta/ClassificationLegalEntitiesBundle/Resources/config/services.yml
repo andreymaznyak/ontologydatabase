@@ -1,0 +1,7 @@
+parameters:
+#    meta_classification_legal_entities.example.class: Meta\ClassificationLegalEntitiesBundle\Example
+
+services:
+#    meta_classification_legal_entities.example:
+#        class: %meta_classification_legal_entities.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

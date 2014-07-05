@@ -164,4 +164,9 @@ class ObjectRelations
     {
         return $this->object;
     }
+    
+    
+    public function __toString() {
+        return $this->name;
+    }
 }

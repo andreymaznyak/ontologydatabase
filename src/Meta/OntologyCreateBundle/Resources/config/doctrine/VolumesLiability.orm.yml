@@ -1,0 +1,16 @@
+Meta\OntologyCreateBundle\Entity\VolumesLiability:
+    type: entity
+    table: volumesliabilities
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+    oneToMany:
+        legalentities:
+            targetEntity: LegalEntity
+            mappedBy: volumesliability

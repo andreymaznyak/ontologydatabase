@@ -16,10 +16,49 @@ class AttributeAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
-            ->add('name')
-            ->add('description')
-            ->add('timestore')
+
+            ->add('name',
+                    null,
+                    array(  
+                        'required' => true,
+                        'label' => 'Название'
+                        )
+                    )
+            ->add('description',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Описание'
+                        )
+                    )
+//            ->add('timestore',
+//                    null,
+//                    array(  
+//                        'required' => false,
+//                        'label' => 'название'
+//                        )
+//                    )
+            ->add('object',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Объект'
+                        )
+                    )
+            ->add('attributedatatype',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Тип данных'
+                        )
+                    )
+            ->add('attributerestriction',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Ограничение'
+                        )
+                    )
         ;
     }
 
@@ -29,16 +68,56 @@ class AttributeAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
-            ->add('name')
-            ->add('description')
-            ->add('timestore')
+
+            ->add('name',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Название'
+                        )
+                    )
+            ->add('description',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Описание'
+                        )
+                    )
+//            ->add('timestore',
+//                    null,
+//                    array(  
+//                        'required' => false,
+//                        'label' => 'название'
+//                        )
+//                    )
+            ->add('object',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Объект'
+                        )
+                    )
+            ->add('attributedatatype',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Тип данных'
+                        )
+                    )
+            ->add('attributerestriction',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Ограничение'
+                        )
+                    )
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
                     'edit' => array(),
                     'delete' => array(),
-                )
+                ),
+                'label' => 'Действия'
             ))
         ;
     }
@@ -49,10 +128,49 @@ class AttributeAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('id')
-            ->add('name')
-            ->add('description')
-            ->add('timestore')
+
+            ->add('name',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Название'
+                        )
+                    )
+            ->add('description',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Описание'
+                        )
+                    )
+//            ->add('timestore',
+//                    null,
+//                    array(  
+//                        'required' => false,
+//                        'label' => 'название'
+//                        )
+//                    )
+            ->add('object',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Объект'
+                        )
+                    )
+            ->add('attributedatatype',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Тип данных'
+                        )
+                    )
+            ->add('attributerestriction',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Ограничение'
+                        )
+                    )
         ;
     }
 
@@ -62,10 +180,49 @@ class AttributeAdmin extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('id')
-            ->add('name')
-            ->add('description')
-            ->add('timestore')
+
+            ->add('name',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Название'
+                        )
+                    )
+            ->add('description',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Описание'
+                        )
+                    )
+//            ->add('timestore',
+//                    null,
+//                    array(  
+//                        'required' => false,
+//                        'label' => 'название'
+//                        )
+//                    )
+            ->add('object',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Объект'
+                        )
+                    )
+            ->add('attributedatatype',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Тип данных'
+                        )
+                    )
+            ->add('attributerestriction',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Ограничение'
+                        )
+                    )
         ;
     }
 }

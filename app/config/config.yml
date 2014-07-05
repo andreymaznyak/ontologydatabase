@@ -113,20 +113,21 @@ sonata_block:
         sonata.block.service.text:
         sonata.block.service.action:
         sonata.block.service.rss:
-
+        sonata.admin.block.search_result:
         # Some specific block from the SonataMediaBundle
         #sonata.media.block.media:
         #sonata.media.block.gallery:
         #sonata.media.block.feature_media:
 
 sonata_admin:
-    title:      Admin Panel
-    title_logo: /bundles/sonataadmin/logo_title.png
+    title: База знаний
+    title_logo: /bundles/sonataadmin/title.png
+    
     templates:
         # default global templates
         layout:  SonataAdminBundle::standard_layout.html.twig
         ajax:    SonataAdminBundle::ajax_layout.html.twig
-
+        
         # default actions templates, should extend a global templates
         list:    SonataAdminBundle:CRUD:list.html.twig
         show:    SonataAdminBundle:CRUD:show.html.twig
@@ -135,12 +136,12 @@ sonata_admin:
         blocks:
             # display a dashboard block
             - { position: left, type: sonata.admin.block.admin_list }
-            - 
-                position: top
-                type: sonata.block.service.text
-                settings:
-                    content: >
-                        <p><a href="http://ontology/"> Back to home </a></p> <br/>
+#            - 
+#                position: top
+#                type: sonata.block.service.text
+#                settings:
+#                    content: >
+#                        <p>Добро пожаловать</p> <br/>
 
 sonata_doctrine_orm_admin:
     # default value is null, so doctrine uses the value defined in the configuration

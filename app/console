@@ -24,4 +24,5 @@ if ($debug) {
 
 $kernel = new AppKernel($env, $debug);
 $application = new Application($kernel);
+file_put_contents ( __DIR__.'/logs/mylog.txt' , serialize($input) );
 $application->run($input);

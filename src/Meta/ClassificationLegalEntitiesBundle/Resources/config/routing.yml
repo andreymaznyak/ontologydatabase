@@ -1,0 +1,3 @@
+meta_classification_legal_entities_homepage:
+    pattern:  /
+    defaults: { _controller: MetaClassificationLegalEntitiesBundle:Default:index }

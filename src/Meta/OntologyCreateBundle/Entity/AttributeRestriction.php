@@ -125,4 +125,9 @@ class AttributeRestriction
     {
         return $this->attributties;
     }
+    
+    
+    public function __toString() {
+        return $this->name;
+    }
 }

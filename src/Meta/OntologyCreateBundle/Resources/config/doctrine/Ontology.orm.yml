@@ -1,10 +1,10 @@
 Meta\OntologyCreateBundle\Entity\Ontology:
     type: entity
-    repositoryClass: Gedmo\Tree\Entity\Repository\NestedTreeRepository
+#   repositoryClass: Gedmo\Tree\Entity\Repository\NestedTreeRepository
     table: ontologies
-    gedmo:
-        tree:
-          type: nested
+#    gedmo:
+#        tree:
+#          type: nested
     id:
         id:
             type: integer
@@ -16,36 +16,36 @@ Meta\OntologyCreateBundle\Entity\Ontology:
             unique: true
         description:
             type: text
-        title:
-          type: string
-          length: 64
-        lft:
-          type: integer
-          gedmo:
-            - treeLeft
-        rgt:
-          type: integer
-          gedmo:
-            - treeRight
-        root:
-          type: integer
-          nullable: true
-          gedmo:
-            - treeRoot
-        lvl:
-          type: integer
-          gedmo:
-            - treeLevel
+#        title:
+#          type: string
+#          length: 64
+#        lft:
+#          type: integer
+#          gedmo:
+#            - treeLeft
+#        rgt:
+#          type: integer
+#          gedmo:
+#            - treeRight
+#        root:
+#          type: integer
+#          nullable: true
+#          gedmo:
+#            - treeRoot
+#        lvl:
+#          type: integer
+#          gedmo:
+#            - treeLevel
     manyToOne:
-        parent:
-            targetEntity: Ontology
-            inversedBy: children
-            joinColumn:
-                name: parent_id
-                referencedColumnName: id
-                onDelete: CASCADE
-            gedmo:
-                - treeParent
+#        parent:
+#            targetEntity: Ontology
+#            inversedBy: children
+#            joinColumn:
+#                name: parent_id
+#                referencedColumnName: id
+#                onDelete: CASCADE
+#            gedmo:
+#                - treeParent
         subjectarea:
             targetEntity: SubjectArea
             inversedBy: ontologyarea
@@ -93,8 +93,8 @@ Meta\OntologyCreateBundle\Entity\Ontology:
         constants:
             targetEntity: Constant
             mappedBy: ontology
-        children:
-            targetEntity: Ontology
-            mappedBy: parent
-            orderBy:
-                lft: ASC
+#        children:
+#            targetEntity: Ontology
+#            mappedBy: parent
+#            orderBy:
+#                lft: ASC
