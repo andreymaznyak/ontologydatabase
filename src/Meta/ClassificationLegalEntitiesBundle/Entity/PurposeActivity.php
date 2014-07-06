@@ -1,13 +1,13 @@
 <?php
 
-namespace Meta\OntologyCreateBundle\Entity;
+namespace Meta\ClassificationLegalEntitiesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * VolumesLiability
+ * PurposeActivity
  */
-class VolumesLiability
+class PurposeActivity
 {
     /**
      * @var integer
@@ -46,7 +46,7 @@ class VolumesLiability
      * Set name
      *
      * @param string $name
-     * @return VolumesLiability
+     * @return PurposeActivity
      */
     public function setName($name)
     {
@@ -68,10 +68,10 @@ class VolumesLiability
     /**
      * Add legalentities
      *
-     * @param \Meta\OntologyCreateBundle\Entity\LegalEntity $legalentities
-     * @return VolumesLiability
+     * @param \Meta\ClassificationLegalEntitiesBundle\Entity\LegalEntity $legalentities
+     * @return PurposeActivity
      */
-    public function addLegalentity(\Meta\OntologyCreateBundle\Entity\LegalEntity $legalentities)
+    public function addLegalentity(\Meta\ClassificationLegalEntitiesBundle\Entity\LegalEntity $legalentities)
     {
         $this->legalentities[] = $legalentities;
 
@@ -81,9 +81,9 @@ class VolumesLiability
     /**
      * Remove legalentities
      *
-     * @param \Meta\OntologyCreateBundle\Entity\LegalEntity $legalentities
+     * @param \Meta\ClassificationLegalEntitiesBundle\Entity\LegalEntity $legalentities
      */
-    public function removeLegalentity(\Meta\OntologyCreateBundle\Entity\LegalEntity $legalentities)
+    public function removeLegalentity(\Meta\ClassificationLegalEntitiesBundle\Entity\LegalEntity $legalentities)
     {
         $this->legalentities->removeElement($legalentities);
     }
@@ -97,7 +97,6 @@ class VolumesLiability
     {
         return $this->legalentities;
     }
-    
     public function __toString() {
         return $this->name;
     }

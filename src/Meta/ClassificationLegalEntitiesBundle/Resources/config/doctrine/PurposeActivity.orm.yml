@@ -1,6 +1,6 @@
-Meta\OntologyCreateBundle\Entity\VolumesLiability:
+Meta\ClassificationLegalEntitiesBundle\Entity\PurposeActivity:
     type: entity
-    table: volumesliabilities
+    table: purposeactivities
     id:
         id:
             type: integer
@@ -13,4 +13,4 @@ Meta\OntologyCreateBundle\Entity\VolumesLiability:
     oneToMany:
         legalentities:
             targetEntity: LegalEntity
-            mappedBy: volumesliability
+            mappedBy: purposeactivity     

@@ -1,6 +1,6 @@
-Meta\OntologyCreateBundle\Entity\OwnershipForm:
+Meta\ClassificationLegalEntitiesBundle\Entity\Participants:
     type: entity
-    table: ownershipforms
+    table: participants
     id:
         id:
             type: integer
@@ -13,4 +13,4 @@ Meta\OntologyCreateBundle\Entity\OwnershipForm:
     oneToMany:
         legalentities:
             targetEntity: LegalEntity
-            mappedBy: ownershipform
+            mappedBy: participants

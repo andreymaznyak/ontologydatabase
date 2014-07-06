@@ -1,4 +1,4 @@
-Meta\OntologyCreateBundle\Entity\LegalEntity:
+Meta\ClassificationLegalEntitiesBundle\Entity\LegalEntity:
     type: entity
     table: legalentities
     id:

@@ -1,13 +1,13 @@
 <?php
 
-namespace Meta\OntologyCreateBundle\Entity;
+namespace Meta\ClassificationLegalEntitiesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * OwnershipForm
+ * Participants
  */
-class OwnershipForm
+class Participants
 {
     /**
      * @var integer
@@ -46,7 +46,7 @@ class OwnershipForm
      * Set name
      *
      * @param string $name
-     * @return OwnershipForm
+     * @return Participants
      */
     public function setName($name)
     {
@@ -68,10 +68,10 @@ class OwnershipForm
     /**
      * Add legalentities
      *
-     * @param \Meta\OntologyCreateBundle\Entity\LegalEntity $legalentities
-     * @return OwnershipForm
+     * @param \Meta\ClassificationLegalEntitiesBundle\Entity\LegalEntity $legalentities
+     * @return Participants
      */
-    public function addLegalentity(\Meta\OntologyCreateBundle\Entity\LegalEntity $legalentities)
+    public function addLegalentity(\Meta\ClassificationLegalEntitiesBundle\Entity\LegalEntity $legalentities)
     {
         $this->legalentities[] = $legalentities;
 
@@ -81,9 +81,9 @@ class OwnershipForm
     /**
      * Remove legalentities
      *
-     * @param \Meta\OntologyCreateBundle\Entity\LegalEntity $legalentities
+     * @param \Meta\ClassificationLegalEntitiesBundle\Entity\LegalEntity $legalentities
      */
-    public function removeLegalentity(\Meta\OntologyCreateBundle\Entity\LegalEntity $legalentities)
+    public function removeLegalentity(\Meta\ClassificationLegalEntitiesBundle\Entity\LegalEntity $legalentities)
     {
         $this->legalentities->removeElement($legalentities);
     }
@@ -97,7 +97,6 @@ class OwnershipForm
     {
         return $this->legalentities;
     }
-    
     public function __toString() {
         return $this->name;
     }

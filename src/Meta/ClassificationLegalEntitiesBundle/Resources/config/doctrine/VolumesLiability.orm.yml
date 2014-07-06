@@ -1,6 +1,6 @@
-Meta\OntologyCreateBundle\Entity\VolumesRightsParticipants:
+Meta\ClassificationLegalEntitiesBundle\Entity\VolumesLiability:
     type: entity
-    table: volumesrightsparticipants
+    table: volumesliabilities
     id:
         id:
             type: integer
@@ -13,4 +13,4 @@ Meta\OntologyCreateBundle\Entity\VolumesRightsParticipants:
     oneToMany:
         legalentities:
             targetEntity: LegalEntity
-            mappedBy: volumerigthparticip
+            mappedBy: volumesliability

@@ -1,6 +1,6 @@
 <?php
 
-namespace Meta\OntologyCreateBundle\Entity;
+namespace Meta\ClassificationLegalEntitiesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -20,27 +20,27 @@ class LegalEntity
     private $name;
 
     /**
-     * @var \Meta\OntologyCreateBundle\Entity\PurposeActivity
+     * @var \Meta\ClassificationLegalEntitiesBundle\Entity\PurposeActivity
      */
     private $purposeactivity;
 
     /**
-     * @var \Meta\OntologyCreateBundle\Entity\OwnershipForm
+     * @var \Meta\ClassificationLegalEntitiesBundle\Entity\OwnershipForm
      */
     private $ownershipform;
 
     /**
-     * @var \Meta\OntologyCreateBundle\Entity\Participants
+     * @var \Meta\ClassificationLegalEntitiesBundle\Entity\Participants
      */
     private $participants;
 
     /**
-     * @var \Meta\OntologyCreateBundle\Entity\VolumesLiability
+     * @var \Meta\ClassificationLegalEntitiesBundle\Entity\VolumesLiability
      */
     private $volumesliability;
 
     /**
-     * @var \Meta\OntologyCreateBundle\Entity\VolumesRightsParticipants
+     * @var \Meta\ClassificationLegalEntitiesBundle\Entity\VolumesRightsParticipants
      */
     private $volumerigthparticip;
 
@@ -81,10 +81,10 @@ class LegalEntity
     /**
      * Set purposeactivity
      *
-     * @param \Meta\OntologyCreateBundle\Entity\PurposeActivity $purposeactivity
+     * @param \Meta\ClassificationLegalEntitiesBundle\Entity\PurposeActivity $purposeactivity
      * @return LegalEntity
      */
-    public function setPurposeactivity(\Meta\OntologyCreateBundle\Entity\PurposeActivity $purposeactivity = null)
+    public function setPurposeactivity(\Meta\ClassificationLegalEntitiesBundle\Entity\PurposeActivity $purposeactivity = null)
     {
         $this->purposeactivity = $purposeactivity;
 
@@ -94,7 +94,7 @@ class LegalEntity
     /**
      * Get purposeactivity
      *
-     * @return \Meta\OntologyCreateBundle\Entity\PurposeActivity 
+     * @return \Meta\ClassificationLegalEntitiesBundle\Entity\PurposeActivity 
      */
     public function getPurposeactivity()
     {
@@ -104,10 +104,10 @@ class LegalEntity
     /**
      * Set ownershipform
      *
-     * @param \Meta\OntologyCreateBundle\Entity\OwnershipForm $ownershipform
+     * @param \Meta\ClassificationLegalEntitiesBundle\Entity\OwnershipForm $ownershipform
      * @return LegalEntity
      */
-    public function setOwnershipform(\Meta\OntologyCreateBundle\Entity\OwnershipForm $ownershipform = null)
+    public function setOwnershipform(\Meta\ClassificationLegalEntitiesBundle\Entity\OwnershipForm $ownershipform = null)
     {
         $this->ownershipform = $ownershipform;
 
@@ -117,7 +117,7 @@ class LegalEntity
     /**
      * Get ownershipform
      *
-     * @return \Meta\OntologyCreateBundle\Entity\OwnershipForm 
+     * @return \Meta\ClassificationLegalEntitiesBundle\Entity\OwnershipForm 
      */
     public function getOwnershipform()
     {
@@ -127,10 +127,10 @@ class LegalEntity
     /**
      * Set participants
      *
-     * @param \Meta\OntologyCreateBundle\Entity\Participants $participants
+     * @param \Meta\ClassificationLegalEntitiesBundle\Entity\Participants $participants
      * @return LegalEntity
      */
-    public function setParticipants(\Meta\OntologyCreateBundle\Entity\Participants $participants = null)
+    public function setParticipants(\Meta\ClassificationLegalEntitiesBundle\Entity\Participants $participants = null)
     {
         $this->participants = $participants;
 
@@ -140,7 +140,7 @@ class LegalEntity
     /**
      * Get participants
      *
-     * @return \Meta\OntologyCreateBundle\Entity\Participants 
+     * @return \Meta\ClassificationLegalEntitiesBundle\Entity\Participants 
      */
     public function getParticipants()
     {
@@ -150,10 +150,10 @@ class LegalEntity
     /**
      * Set volumesliability
      *
-     * @param \Meta\OntologyCreateBundle\Entity\VolumesLiability $volumesliability
+     * @param \Meta\ClassificationLegalEntitiesBundle\Entity\VolumesLiability $volumesliability
      * @return LegalEntity
      */
-    public function setVolumesliability(\Meta\OntologyCreateBundle\Entity\VolumesLiability $volumesliability = null)
+    public function setVolumesliability(\Meta\ClassificationLegalEntitiesBundle\Entity\VolumesLiability $volumesliability = null)
     {
         $this->volumesliability = $volumesliability;
 
@@ -163,7 +163,7 @@ class LegalEntity
     /**
      * Get volumesliability
      *
-     * @return \Meta\OntologyCreateBundle\Entity\VolumesLiability 
+     * @return \Meta\ClassificationLegalEntitiesBundle\Entity\VolumesLiability 
      */
     public function getVolumesliability()
     {
@@ -173,10 +173,10 @@ class LegalEntity
     /**
      * Set volumerigthparticip
      *
-     * @param \Meta\OntologyCreateBundle\Entity\VolumesRightsParticipants $volumerigthparticip
+     * @param \Meta\ClassificationLegalEntitiesBundle\Entity\VolumesRightsParticipants $volumerigthparticip
      * @return LegalEntity
      */
-    public function setVolumerigthparticip(\Meta\OntologyCreateBundle\Entity\VolumesRightsParticipants $volumerigthparticip = null)
+    public function setVolumerigthparticip(\Meta\ClassificationLegalEntitiesBundle\Entity\VolumesRightsParticipants $volumerigthparticip = null)
     {
         $this->volumerigthparticip = $volumerigthparticip;
 
@@ -186,7 +186,7 @@ class LegalEntity
     /**
      * Get volumerigthparticip
      *
-     * @return \Meta\OntologyCreateBundle\Entity\VolumesRightsParticipants 
+     * @return \Meta\ClassificationLegalEntitiesBundle\Entity\VolumesRightsParticipants 
      */
     public function getVolumerigthparticip()
     {
