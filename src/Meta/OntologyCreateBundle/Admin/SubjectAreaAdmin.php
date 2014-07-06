@@ -16,9 +16,28 @@ class SubjectAreaAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
-            ->add('name')
-            ->add('description')
+//            ->add('id')
+            ->add('name',
+                    null,
+                    array(  
+                        'required' => true,
+                        'label' => 'Название'
+                        )
+                    )
+            ->add('description',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Описание'
+                        )
+                    )
+            ->add('ontologyarea',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Онтологии'
+                        )
+                    )
         ;
     }
 
@@ -28,9 +47,28 @@ class SubjectAreaAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
-            ->add('name')
-            ->add('description')
+//            ->add('id')
+            ->add('name',
+                    null,
+                    array(  
+                        'required' => true,
+                        'label' => 'Название'
+                        )
+                    )
+            ->add('description',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Описание'
+                        )
+                    )
+            ->add('ontologyarea',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Онтологии'
+                        )
+                    )
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -47,9 +85,28 @@ class SubjectAreaAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('id')
-            ->add('name')
-            ->add('description')
+//            ->add('id')
+            ->add('name',
+                    null,
+                    array(  
+                        'required' => true,
+                        'label' => 'Название'
+                        )
+                    )
+            ->add('description',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Описание'
+                        )
+                    )
+            ->add('ontologyarea',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Онтологии'
+                        )
+                    )
         ;
     }
 
@@ -59,9 +116,28 @@ class SubjectAreaAdmin extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('id')
-            ->add('name')
-            ->add('description')
+//            ->add('id')
+            ->add('name',
+                    null,
+                    array(  
+                        'required' => true,
+                        'label' => 'Название'
+                        )
+                    )
+            ->add('description',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Описание'
+                        )
+                    )
+            ->add('ontologyarea',
+                    null,
+                    array(  
+                        'required' => false,
+                        'label' => 'Онтологии'
+                        )
+                    )
         ;
     }
 }

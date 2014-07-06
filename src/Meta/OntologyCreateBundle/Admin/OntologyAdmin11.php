@@ -16,9 +16,14 @@ class OntologyAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
+//            ->add('id')
             ->add('name')
             ->add('description')
-            ->add('extansions')
+//            ->add('title')
+//            ->add('lft')
+//            ->add('rgt')
+//            ->add('root')
+//            ->add('lvl')
         ;
     }
 
@@ -28,9 +33,14 @@ class OntologyAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
+//            ->add('id')
             ->add('name')
             ->add('description')
-            ->add('extansions')
+            //->add('title')
+            //->add('lft')
+            //->add('rgt')
+            //->add('root')
+            //->add('lvl')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
@@ -47,9 +57,14 @@ class OntologyAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('id')
+//            ->add('id')
             ->add('name')
             ->add('description')
+//            ->add('title')
+//            ->add('lft')
+//            ->add('rgt')
+//            ->add('root')
+//            ->add('lvl')
         ;
     }
 
@@ -59,9 +74,14 @@ class OntologyAdmin extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('id')
+//            ->add('id')
             ->add('name')
             ->add('description')
+//            ->add('title')
+//            ->add('lft')
+//            ->add('rgt')
+//            ->add('root')
+//            ->add('lvl')
         ;
     }
 }

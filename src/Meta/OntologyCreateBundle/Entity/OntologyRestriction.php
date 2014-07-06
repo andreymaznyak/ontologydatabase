@@ -247,4 +247,9 @@ class OntologyRestriction
     {
         return $this->processes;
     }
+    
+    
+    public function __toString() {
+        return $this->name;
+    }
 }

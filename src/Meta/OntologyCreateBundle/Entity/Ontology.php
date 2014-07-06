@@ -3,9 +3,11 @@
 namespace Meta\OntologyCreateBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Ontology
+ * @Gedmo\Tree(type="nested")
+ *
  */
 class Ontology
 {
@@ -47,7 +49,10 @@ class Ontology
         $this->objects = new \Doctrine\Common\Collections\ArrayCollection();
         $this->extansions = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
+    
+    public function __toString() {
+        return $this->name;
+    }
     /**
      * Get id
      *

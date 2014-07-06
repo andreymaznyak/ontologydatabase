@@ -33,7 +33,9 @@
         "sonata-project/easy-extends-bundle": "dev-master",
         "sonata-project/datagrid-bundle": "~2.2@dev",
         "jms/serializer-bundle": "dev-master",
-        "gedmo/doctrine-extensions": "dev-master"
+        "gedmo/doctrine-extensions": "dev-master",
+        "lexik/form-filter-bundle": "dev-master",
+        "knplabs/knp-paginator-bundle": "dev-master"
         
     },
     "scripts": {
@@ -64,5 +66,8 @@
         "branch-alias": {
             "dev-master": "2.4-dev"
         }
+    },
+    "require-dev": {
+        "pugx/generator-bundle": "2.4.*"
     }
 }

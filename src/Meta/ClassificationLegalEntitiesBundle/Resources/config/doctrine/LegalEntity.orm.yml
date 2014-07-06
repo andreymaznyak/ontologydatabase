@@ -1,0 +1,43 @@
+Meta\ClassificationLegalEntitiesBundle\Entity\LegalEntity:
+    type: entity
+    table: legalentities
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+    manyToOne:
+        purposeactivity:
+            targetEntity: PurposeActivity
+            inversedBy: legalentities
+            joinColumn:
+                name: purposeactivity_id
+                referencedColumnName: id
+        ownershipform:
+            targetEntity: OwnershipForm
+            inversedBy: legalentities
+            joinColumn:
+                name: ownershipform_id
+                referencedColumnName: id
+        participants:
+            targetEntity: Participants
+            inversedBy: legalentities
+            joinColumn:
+                name: participants_id
+                referencedColumnName: id
+        volumesliability:
+            targetEntity: VolumesLiability
+            inversedBy: legalentities
+            joinColumn:
+                name: volumesliability_id
+                referencedColumnName: id
+        volumerigthparticip:
+            targetEntity: VolumesRightsParticipants
+            inversedBy: legalentities
+            joinColumn:
+                name: volumesrightsparticipants_id
+                referencedColumnName: id

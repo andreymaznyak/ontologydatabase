@@ -1,0 +1,22 @@
+Name: Название
+Id: Индекс
+Edit: Редактировать
+'Back to the list': 'Вернуться к списку'
+Delete: Удалить
+'Confirm delete': 'Подтверить удаление'
+'You are about to delete an item': 'Вы уверены что хотите удалить элемент'
+'this procedure is irreversible': 'this procedure is irreversible'
+'Do you want to proceed?': 'Do you want to proceed?'
+Yes: Подтвердить
+No: Отменить
+'Show/hide filters': 'Показать/Скрыть фильтры'
+Filter: Фильтр
+'Reset filters': 'Сбросить фильтры'
+'%entity% list': 'список %entity%'
+Actions: Действия
+show: Показать
+edit: Изменить
+'Create a new entry': 'Создать новый элемент'
+'%entity% creation': 'Редактирование %entity%'
+Create: Создать
+'%entity% edit': '__%entity% edit'

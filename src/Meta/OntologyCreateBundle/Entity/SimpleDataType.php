@@ -125,4 +125,9 @@ class SimpleDataType
     {
         return $this->datatype;
     }
+    
+    
+    public function __toString() {
+        return $this->name;
+    }
 }

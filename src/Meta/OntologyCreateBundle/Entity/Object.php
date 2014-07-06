@@ -372,4 +372,9 @@ class Object
     {
         return $this->relation;
     }
+    
+    
+    public function __toString() {
+        return $this->name;
+    }
 }

@@ -191,4 +191,9 @@ class Trigger
     {
         return $this->stopprocesses;
     }
+    
+    
+    public function __toString() {
+        return $this->name;
+    }
 }

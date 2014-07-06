@@ -2,77 +2,81 @@ services:
     meta_ontology.admin.ontology:
         class: Meta\OntologyCreateBundle\Admin\OntologyAdmin
         arguments: [~, Meta\OntologyCreateBundle\Entity\Ontology, MetaOntologyBundle:OntologyAdmin]
+        calls:
+            - [setTranslationDomain, [MetaAdminBundle]]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: Ontology}
+            - {name: sonata.admin, manager_type: orm, group: Управление онтологиями, label: Онтологии}
 
     meta_ontology.admin.subject_area:
         class: Meta\OntologyCreateBundle\Admin\SubjectAreaAdmin
         arguments: [~, Meta\OntologyCreateBundle\Entity\SubjectArea, MetaOntologyBundle:SubjectAreaAdmin]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: SubjectArea}
+            - {name: sonata.admin, manager_type: orm, group: Управление онтологиями, label: Предметные области}
 
     meta_ontology.admin.attribute:
         class: Meta\OntologyCreateBundle\Admin\AttributeAdmin
         arguments: [~, Meta\OntologyCreateBundle\Entity\Attribute, MetaOntologyBundle:AttributeAdmin]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: Attribute}
+            - {name: sonata.admin, manager_type: orm, group: Управление онтологиями, label: Свойсва объектов}
 
     meta_ontology.admin.attribute_restriction:
         class: Meta\OntologyCreateBundle\Admin\AttributeRestrictionAdmin
         arguments: [~, Meta\OntologyCreateBundle\Entity\AttributeRestriction, MetaOntologyBundle:AttributeRestrictionAdmin]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: AttributeRestriction}
+            - {name: sonata.admin, manager_type: orm, group: Управление онтологиями, label: Ограничения свойсв}
 
     meta_ontology.admin.constant:
         class: Meta\OntologyCreateBundle\Admin\ConstantAdmin
         arguments: [~, Meta\OntologyCreateBundle\Entity\Constant, MetaOntologyBundle:ConstantAdmin]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: Constant}
+            - {name: sonata.admin, manager_type: orm, group: Управление онтологиями, label: Константы}
 
     meta_ontology.admin.data_type:
         class: Meta\OntologyCreateBundle\Admin\DataTypeAdmin
         arguments: [~, Meta\OntologyCreateBundle\Entity\DataType, MetaOntologyBundle:DataTypeAdmin]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: DataType}
+            - {name: sonata.admin, manager_type: orm, group: Управление онтологиями, label: Типы данных}
 
     meta_ontology.admin.object:
         class: Meta\OntologyCreateBundle\Admin\ObjectAdmin
         arguments: [~, Meta\OntologyCreateBundle\Entity\Object, MetaOntologyBundle:ObjectAdmin]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: Object}
+            - {name: sonata.admin, manager_type: orm, group: Управление онтологиями, label: Объекты}
 
     meta_ontology.admin.object_relations:
         class: Meta\OntologyCreateBundle\Admin\ObjectRelationsAdmin
         arguments: [~, Meta\OntologyCreateBundle\Entity\ObjectRelations, MetaOntologyBundle:ObjectRelationsAdmin]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: ObjectRelations}
+            - {name: sonata.admin, manager_type: orm, group: Управление онтологиями, label: Ограничения объектов}
 
     meta_ontology.admin.ontology_process:
         class: Meta\OntologyCreateBundle\Admin\OntologyProcessAdmin
         arguments: [~, Meta\OntologyCreateBundle\Entity\OntologyProcess, MetaOntologyBundle:OntologyProcessAdmin]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: OntologyProcess}
+            - {name: sonata.admin, manager_type: orm, group: Управление онтологиями, label: Процессы}
 
     meta_ontology.admin.ontology_restriction:
         class: Meta\OntologyCreateBundle\Admin\OntologyRestrictionAdmin
         arguments: [~, Meta\OntologyCreateBundle\Entity\OntologyRestriction, MetaOntologyBundle:OntologyRestrictionAdmin]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: OntologyRestriction}
+            - {name: sonata.admin, manager_type: orm, group: Управление онтологиями, label: Ограничения онтологий}
 
     meta_ontology.admin.restriction_type:
         class: Meta\OntologyCreateBundle\Admin\RestrictionTypeAdmin
         arguments: [~, Meta\OntologyCreateBundle\Entity\RestrictionType, MetaOntologyBundle:RestrictionTypeAdmin]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: RestrictionType}
+            - {name: sonata.admin, manager_type: orm, group: Управление онтологиями, label: Типы ограничений}
 
     meta_ontology.admin.simple_data_type:
         class: Meta\OntologyCreateBundle\Admin\SimpleDataTypeAdmin
         arguments: [~, Meta\OntologyCreateBundle\Entity\SimpleDataType, MetaOntologyBundle:SimpleDataTypeAdmin]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: SimpleDataType}
+            - {name: sonata.admin, manager_type: orm, group: Управление онтологиями, label: Простые типы данных}
 
     meta_ontology.admin.trigger:
         class: Meta\OntologyCreateBundle\Admin\TriggerAdmin
         arguments: [~, Meta\OntologyCreateBundle\Entity\Trigger, MetaOntologyBundle:TriggerAdmin]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: Trigger}
+            - {name: sonata.admin, manager_type: orm, group: Управление онтологиями, label: Триггеры}
+
+

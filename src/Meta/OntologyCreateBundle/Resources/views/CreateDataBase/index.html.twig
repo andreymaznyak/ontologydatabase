@@ -1,0 +1,19 @@
+{% extends '::base.bs.html.twig' %}
+
+{% block title -%}Создание базы данных{% endblock %}
+{% block body_heading -%}<div class="panel-heading">Создание базы данных</div>{% endblock %}
+
+{% block body -%}
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-success"><span class="glyphicon glyphicon-ok"></span> Онтологические соглашения выполненны </li>
+        <li class="list-group-item list-group-item-success"><span class="glyphicon glyphicon-ok"></span> Онтология полна </li>
+        <li class="list-group-item list-group-item-success"><span class="glyphicon glyphicon-ok"></span> Проверка адекватности пройдена</li>
+    </ul>
+    <form action="{{ path('createdatabase_create') }}" method="post">
+        <button class="btn btn-primary" type="submit">Создать базу данных</button>
+    </form>
+{% endblock %}
+
+{% block body_footer -%}
+	
+{% endblock %}

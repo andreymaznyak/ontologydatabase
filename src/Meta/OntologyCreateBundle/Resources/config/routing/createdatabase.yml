@@ -1,0 +1,8 @@
+createdatabase_wizard:
+    pattern:  /wizard
+    defaults: { _controller: "MetaOntologyBundle:CreateDataBase:wizard" }
+    requirements: { _method: get }
+createdatabase_create:
+    pattern:  /create
+    defaults: { _controller: "MetaOntologyBundle:CreateDataBase:create" }
+    requirements: { _method: post|get }

@@ -1,0 +1,7 @@
+parameters:
+#    meta_resume.example.class: Meta\ResumeBundle\Example
+
+services:
+#    meta_resume.example:
+#        class: %meta_resume.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

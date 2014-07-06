@@ -1,0 +1,20 @@
+{% extends '::base.bs.html.twig' %}
+
+{% block title -%}Организационно-провавая форма{% endblock %}
+{% block body_heading -%}<div class="panel-heading">Организационно-провавая форма</div>{% endblock %}
+
+{% block body -%}
+
+    <dl class="dl-horizontal">                <dt>Номер</dt>
+                <dd>{{ entity.id }}</dd>                <dt>Название</dt>
+                <dd>{{ entity.name }}</dd>	</dl>
+
+{% endblock %}
+
+{% block body_footer -%}
+	    <div class="panel-footer">
+	<div class="btn-group">
+		<button type="button" class="btn btn-default"><a href="{{ path('legalentity') }}">Вернуться к списку</a></button>
+		</div>
+</div>
+{% endblock %}

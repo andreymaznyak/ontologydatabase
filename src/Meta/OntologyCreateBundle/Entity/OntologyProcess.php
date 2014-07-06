@@ -504,4 +504,9 @@ class OntologyProcess
     {
         return $this->ontologyrestrictions;
     }
+    
+    
+    public function __toString() {
+        return $this->name;
+    }
 }

@@ -1,0 +1,3 @@
+meta_resume_homepage:
+    pattern:  /
+    defaults: { _controller: MetaResumeBundle:Default:index }

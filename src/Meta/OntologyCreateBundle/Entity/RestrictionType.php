@@ -125,4 +125,11 @@ class RestrictionType
     {
         return $this->restrictions;
     }
+    
+    
+    public function __toString() {
+        return $this->name;
+    }
+    
+    
 }

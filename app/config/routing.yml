@@ -1,13 +1,9 @@
-meta_ontology:
-    resource: "@MetaOntologyBundle/Resources/config/routing.yml"
-    prefix:   /
+meta_classification_legal_entities:
+    resource: "@MetaClassificationLegalEntitiesBundle/Resources/config/routing.yml"
+    prefix:   /classification
 
-test:
-    resource: "@TestBundle/Resources/config/routing.yml"
-    prefix:   /
-
-meta_ontology:
-    resource: "@MetaOntologyBundle/Resources/config/routing.yml"
+meta_resume:
+    resource: "@MetaResumeBundle/Resources/config/routing.yml"
     prefix:   /
 
 fos_user_security:

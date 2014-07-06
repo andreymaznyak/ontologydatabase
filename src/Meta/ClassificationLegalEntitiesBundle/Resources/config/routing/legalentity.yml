@@ -1,0 +1,35 @@
+legalentity:
+    pattern:  /
+    defaults: { _controller: "MetaClassificationLegalEntitiesBundle:LegalEntity:index" }
+
+legalentity_sort:
+    pattern:  /{field}/{type}/sort
+    defaults: { _controller: "MetaClassificationLegalEntitiesBundle:LegalEntity:sort" }
+    requirements: { type: ASC|DESC }
+
+legalentity_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "MetaClassificationLegalEntitiesBundle:LegalEntity:show" }
+
+legalentity_new:
+    pattern:  /new
+    defaults: { _controller: "MetaClassificationLegalEntitiesBundle:LegalEntity:new" }
+
+legalentity_create:
+    pattern:  /create
+    defaults: { _controller: "MetaClassificationLegalEntitiesBundle:LegalEntity:create" }
+    requirements: { _method: post }
+
+legalentity_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "MetaClassificationLegalEntitiesBundle:LegalEntity:edit" }
+
+legalentity_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "MetaClassificationLegalEntitiesBundle:LegalEntity:update" }
+    requirements: { _method: post|put }
+
+legalentity_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "MetaClassificationLegalEntitiesBundle:LegalEntity:delete" }
+    requirements: { _method: post|delete }

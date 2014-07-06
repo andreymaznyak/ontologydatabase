@@ -7,8 +7,10 @@ imports:
 
 framework:
     #esi:             ~
-    translator:      { fallback: "%locale%" }
+    
+    translator:      { fallback: en }
     secret:          "%secret%"
+    default_locale: en
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
         strict_requirements: ~
@@ -31,7 +33,9 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-
+    form:
+        resources:
+            - LexikFormFilterBundle:Form:form_div_layout.html.twig
 # Assetic Configuration
 assetic:
     debug:          "%kernel.debug%"
@@ -113,20 +117,21 @@ sonata_block:
         sonata.block.service.text:
         sonata.block.service.action:
         sonata.block.service.rss:
-
+        sonata.admin.block.search_result:
         # Some specific block from the SonataMediaBundle
         #sonata.media.block.media:
         #sonata.media.block.gallery:
         #sonata.media.block.feature_media:
 
 sonata_admin:
-    title:      Admin Panel
-    title_logo: /bundles/sonataadmin/logo_title.png
+    title: База знаний
+    title_logo: /bundles/sonataadmin/title.png
+    
     templates:
         # default global templates
         layout:  SonataAdminBundle::standard_layout.html.twig
         ajax:    SonataAdminBundle::ajax_layout.html.twig
-
+        
         # default actions templates, should extend a global templates
         list:    SonataAdminBundle:CRUD:list.html.twig
         show:    SonataAdminBundle:CRUD:show.html.twig
@@ -135,12 +140,12 @@ sonata_admin:
         blocks:
             # display a dashboard block
             - { position: left, type: sonata.admin.block.admin_list }
-            - 
-                position: top
-                type: sonata.block.service.text
-                settings:
-                    content: >
-                        <p><a href="http://ontology/"> Back to home </a></p> <br/>
+#            - 
+#                position: top
+#                type: sonata.block.service.text
+#                settings:
+#                    content: >
+#                        <p>Добро пожаловать</p> <br/>
 
 sonata_doctrine_orm_admin:
     # default value is null, so doctrine uses the value defined in the configuration
@@ -188,3 +193,13 @@ sonata_doctrine_orm_admin:
                 percent:    SonataAdminBundle:CRUD:base_percent.html.twig
                 choice:     SonataAdminBundle:CRUD:show_choice.html.twig
                 url:        SonataAdminBundle:CRUD:show_url.html.twig
+knp_paginator:
+    page_range: 5                      # default page range used in pagination control
+    default_options:
+        page_name: page                # page query parameter name
+        sort_field_name: sort          # sort field query parameter name
+        sort_direction_name: direction # sort direction query parameter name
+        distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
+    template:
+        pagination: KnpPaginatorBundle:Pagination:sliding.html.twig     # sliding pagination controls template
+        sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template

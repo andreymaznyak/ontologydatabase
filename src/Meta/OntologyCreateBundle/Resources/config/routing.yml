@@ -1,7 +1,11 @@
-meta_ontology_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: MetaOntologyBundle:Default:index }
 MetaOntologyBundle_ontology:
     resource: "@MetaOntologyBundle/Resources/config/routing/ontology.yml"
     prefix:   /list
+    
+MetaOntologyBundle_createdatabase:
+    resource: "@MetaOntologyBundle/Resources/config/routing/createdatabase.yml"
+    prefix:   /createdatabase
 
+MetaOntologyBundle_legalentity:
+    resource: "@MetaOntologyBundle/Resources/config/routing/legalentity.yml"
+    prefix:   /legalentity

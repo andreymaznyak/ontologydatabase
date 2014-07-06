@@ -1,0 +1,26 @@
+{% extends "MetaClassificationLegalEntitiesBundle:Default:base.classification.bs.html.twig" %}
+
+{% block title %}{{ '%entity% creation'|trans({'%entity%': 'LegalEntity'}, 'admin') }}{% endblock %}
+
+{% block body %}
+    <h1>{{ '%entity% creation'|trans({'%entity%': 'LegalEntity'}, 'admin') }}</h1>
+
+    <form action="{{ path('legalentity_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <p>
+            <button class="btn btn-primary" type="submit">{{ 'Create'|trans({}, 'admin') }}</button>
+        </p>
+    </form>
+
+        
+        <div class="btn-group record_actions">
+
+            <a class="btn btn-info" href="{{ path('legalentity') }}">
+                <i class="fa fa-list"></i> {{ 'Back to the list'|trans({}, 'admin') }}
+            </a>
+
+
+        </div>
+
+
+{% endblock %}

@@ -181,4 +181,9 @@ class Constant
     {
         return $this->ontology;
     }
+    
+    
+    public function __toString() {
+        return $this->name;
+    }
 }

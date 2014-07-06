@@ -471,4 +471,9 @@ class DataType
     {
         return $this->iscompositedatatype;
     }
+    
+    
+    public function __toString() {
+        return $this->name;
+    }
 }
